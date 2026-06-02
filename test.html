@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ឧទាហរណ៍ CSS Hover Effects</title>
+    <style>
+        /* ម៉ូដទូទៅសម្រាប់ទំព័រ */
+        body {
+            font-family: 'Khmer OS Battambang', sans-serif;
+            background-color: #f4f6f9;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* ១. ម៉ូដសម្រាប់ប៊ូតុង (Button Hover) */
+        .my-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            /* បង្កើតចលនារលូនពេលផ្លាស់ប្តូរពណ៌ និងស្រមោល */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .my-button:hover {
+            background-color: #2e86de; /* ប្តូរពណ៌ផ្ទៃក្រោយ */
+            transform: translateY(-3px); /* រំកិលឡើងលើបន្តិច */
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4); /* បន្ថែមស្រមោលភ្លឺ */
+        }
+
+        .my-button:active {
+            transform: translateY(-1px); /* រំកិលចុះក្រោមវិញបន្តិចពេលចុចសង្កត់ */
+        }
+
+        /* ២. ម៉ូដសម្រាប់ម៉ឺនុយទម្លាក់ចុះ (Dropdown Hover) */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none; /* លាក់ម៉ឺនុយក្នុងស្ថានភាពធម្មតា */
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            z-index: 1;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.2s;
+        }
+
+        /* ពេល hover លើតំណភ្ជាប់នីមួយៗក្នុង dropdown */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #2ecc71;
+        }
+
+        /* គន្លឹះសំខាន់៖ ពេល hover លើ .dropdown (មេ) ឱ្យបង្ហាញ .dropdown-content (កូន) */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* ៣. ម៉ូដសម្រាប់រូបភាព (Image Hover Interaction) */
+        .img-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden; /* លាក់ផ្នែករូបភាពដែលរីកហៀរចេញក្រៅ */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease; /* ចលនារីកធំមានភាពរលូន */
+        }
+
+        /* ពេល hover ឱ្យរូបភាពពង្រីកធំជាងមុនបន្តិច */
+        .img-container:hover img {
+            transform: scale(1.1);
+        }
+
+        /* បង្កើតផ្ទាំងខ្មៅស្រអាប់បាំងពីលើរូបភាព */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* លាក់ផ្ទាំងនេះក្នុងស្ថានភាពធម្មតា */
+            transition: opacity 0.4s ease;
+        }
+
+        /* ពេល hover លើ container ឱ្យផ្ទាំងខ្មៅស្រអាប់បង្ហាញខ្លួនមក */
+        .img-container:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ១. ផ្នែកប៊ូតុង -->
+    <div class="section">
+        <h2>១. គំរូ Button Hover</h2>
+        <button class="my-button">ដាក់កណ្ដុរលើខ្ញុំ</button>
+    </div>
+
+    <!-- ២. ផ្នែកម៉ឺនុយទម្លាក់ចុះ -->
+    <div class="section">
+        <h2>២. គំរូ Dropdown Menu</h2>
+        <div class="dropdown">
+            <button class="dropdown-btn">ម៉ឺនុយជម្រើស ▾</button>
+            <div class="dropdown-content">
+                <a href="#">ប្រវត្តិរូប</a>
+                <a href="#">ការកំណត់</a>
+                <a href="#">ចាកចេញ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ៣. ផ្នែកអន្តរកម្មលើរូបភាព -->
+    <div class="section">
+        <h2>៣. គំរូ Image Hover</h2>
+        <div class="img-container">
+            <!-- ប្រើប្រាស់រូបភាពគំរូពីអុីនធឺណិត -->
+            <img src="https://picsum.photos" alt="Sample Image">
+            <div class="overlay">
+                <h3>មើលព័ត៌មានលម្អិត</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
