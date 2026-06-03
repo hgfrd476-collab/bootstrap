@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Bootstrap Only</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-dark text-white">
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 bg-black vh-100 p-3">
+      <h5>Your Library</h5>
+
+      <button class="btn btn-light w-100 my-3 rounded-pill">
+        Create playlist
+      </button>
+
+      <div class="bg-secondary bg-opacity-25 p-3 rounded">
+        <p class="mb-1">Create your first playlist</p>
+        <small>It's easy, we'll help you</small>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="col-md-9 col-lg-10 p-4">
+
+      <!-- Topbar -->
+      <div class="d-flex justify-content-between align-items-center bg-secondary bg-opacity-25 p-3 rounded mb-4">
+        
+        <input type="text" 
+               class="form-control w-50 rounded-pill" 
+               placeholder="What do you want to play?">
+
+        <div>
+          <button class="btn btn-outline-light me-2 rounded-pill">Sign up</button>
+          <button class="btn btn-light rounded-pill">Log in</button>
+        </div>
+      </div>
+
+      <!-- Trending -->
+      <h5 class="mb-3">Trending Songs</h5>
+
+      <div class="row g-3">
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="card bg-dark text-white border-0">
+            <img src="https://i.scdn.co/image/ab67616d0000b273e0b60c608586d88252b8fbc8" class="card-img-top rounded">
+            <div class="card-body p-2">
+              <h6 class="card-title mb-0">Love Me</h6>
+              <small>Ariana Grande</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="card bg-dark text-white border-0">
+            <img src="https://i.scdn.co/image/ab67616d0000b2736b3c2f5c2c7d5c7a8d9b1c55" class="card-img-top rounded">
+            <div class="card-body p-2">
+              <h6 class="card-title mb-0">ZOOM</h6>
+              <small>TREASURE</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="card bg-dark text-white border-0">
+            <img src="https://i.scdn.co/image/ab67616d0000b2738e3c5f5a7d3c4f8f7e4b1c2d" class="card-img-top rounded">
+            <div class="card-body p-2">
+              <h6 class="card-title mb-0">LEMONADE</h6>
+              <small>aespa</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Artists -->
+      <h5 class="mt-4 mb-3">Popular Artists</h5>
+
+      <div class="row g-3 text-center">
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://i.scdn.co/image/ab6761610000e5ebc7c8c3a8c7d7d7c8c8c8c8c8" 
+               class="img-fluid rounded-circle mb-2">
+          <p class="mb-0">Artist 1</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://i.scdn.co/image/ab6761610000e5ebc7c8c3a8c7d7d7c8c8c8c8c8" 
+               class="img-fluid rounded-circle mb-2">
+          <p class="mb-0">Artist 2</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="https://i.scdn.co/image/ab6761610000e5ebc7c8c3a8c7d7d7c8c8c8c8c8" 
+               class="img-fluid rounded-circle mb-2">
+          <p class="mb-0">Artist 3</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
